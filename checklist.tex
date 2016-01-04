@@ -1,0 +1,89 @@
+
+%!TEX TS-program = xelatex
+
+\documentclass[letterpaper,oneside,11pt,article, landscape]{memoir}
+\usepackage[pdftitle={Scientific Paper Checklist}, pdfauthor={Jonathan Peelle}, colorlinks=true, urlcolor=black]{hyperref}
+\usepackage{colortbl}
+% left and right margins are equal, based on (\pagewidth - \textwidth)/2
+%\textwidth=5.8in
+\setlrmarginsandblock{.75in}{.75in}{*}
+\setulmarginsandblock{.75in}{.75in}{*}
+
+\usepackage{array,ragged2e}
+\usepackage{fontspec,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setromanfont{Helvetica}
+
+\usepackage{color}
+
+\renewcommand{\arraystretch}{1.5}
+
+%list
+\newenvironment{smlist}{%
+\list{}{
+\setlength{\topsep}{0in}
+\setlength{\partopsep}{0in}
+\setlength{\parskip}{0in}
+\setlength{\labelsep}{0.05in}
+\setlength{\itemindent}{0in}
+\setlength{\leftmargin}{0.1in}
+\setlength{\labelwidth}{0pt}
+\setlength{\listparindent}{0pt}
+\setlength{\parsep}{0pt}
+\setlength{\itemsep}{0.2ex}
+\let\makelabel\textbullet
+}
+}{\endlist}
+
+
+
+
+
+\checkandfixthelayout	% for memoir class
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+{\Large Checklist for Scientific Papers}
+
+\small{\url{http://github.com/jpeelle/paperchecklist}}
+\end{center}
+
+%\tightlists
+
+\begin{tabular}{| p{2.5in} | c | p{5.5in} |}
+
+\hline
+\textbf{Item}& 							\textbf{Done?*}& \textbf{Read this}\\ \hline
+
+% General
+\rowcolor[gray]{.9} \multicolumn{3}{| l |}{General} \\ \hline
+
+Stimuli/materials publicly available?&	& \begin{smlist} \item{\url{https://opennessinitiative.org}} \end{smlist}		\\ \hline
+
+Data publicly available?	&	&		\\ \hline
+
+Data analyses publicly available?	&	&		\\ \hline
+
+
+% Statistics
+\rowcolor[gray]{.9} \multicolumn{3}{| l |}{Statistics} \\ \hline
+
+Preregistered the experiments?	&	& \begin{smlist} \item{Chambers CD (2013) Registered Reports: A new publishing initiative at Cortex. Cortex 49:609-610. \href{http://dx.doi.org/10.1016/j.cortex.2012.12.016}{doi:10.1016/j.cortex.2012.12.016}} \item{\url{http://deevybee.blogspot.com/2013/07/why-we-need-pre-registration.html}} \item{\url{http://datacolada.org/2015/12/01/44_aspredicted/} } \end{smlist}		\\ \hline
+
+Explained all conducted tests?	&	& \begin{smlist} \item{Simmons JP, Nelson LD, Simonsohn U (2011) False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant. Psychol Sci 22:1359-1366.} \item{Simmons JP,  Nelson LD, Simonsohn U (2012) A 21 Word Solution. \href{http://dx.doi.org/10.2139/ssrn.2160588}{doi:10.2139/ssrn.2160588}} \end{smlist}		\\ \hline
+
+Avoided p values?	&	& \begin{smlist} \item{Cohen J (1994) The earth is round (p < .05). American Psychologist 49:997-1003.
+} \end{smlist}		\\ \hline
+
+Included effect sizes? &	&		\\ \hline
+
+Included confidence intervals (traditional or Bayesian)?	&	& \begin{smlist} \item{Cumming G (2014) The new statistics: Why and how. Psychol Sci 25:7-29.} \item{Morey RD, Hoekstra R, Rouder JN, Lee MD, Wagenmakers E-J (In press) The fallacy of placing confidence in confidence intervals. Psych Bull Rev.} \end{smlist}		\\ \hline
+
+
+\end{tabular}
+
+* D = don't know how, H = too hard, E = ethical constraints make it impossible, S = scary, B = bad for science, O = other (specify)
+
+\end{document}
