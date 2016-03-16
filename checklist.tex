@@ -5,6 +5,7 @@
 \usepackage[pdftitle={Scientific Paper Checklist}, pdfauthor={Jonathan Peelle}, colorlinks=true, urlcolor=blue]{hyperref}
 \usepackage{colortbl}
 \usepackage{color}
+\usepackage{multirow}
 
 \setlrmarginsandblock{.8in}{.8in}{*}
 \setulmarginsandblock{.8in}{.8in}{*}
@@ -34,12 +35,12 @@
 
 \begin{table}[t]
 
+\centering
 
-\begin{center}
 {\Large Checklist for Scientific Papers}
 
 \small{\url{http://github.com/jpeelle/paperchecklist}}
-\end{center}
+
 
  \setlength{\extrarowheight}{.2in}
 \begin{tabular}{| p{3.5in} | c | c | c | l |}
@@ -52,11 +53,18 @@
 \rowcolor[gray]{.9} \multicolumn{5}{| l |}{Openness} \\ \hline
 
 
-Made stimuli/materials publicly available?& & & & \ref{open} (page \pageref{open}) \\ \hline
+%Made stimuli and materials publicly available?& & & & \ref{open} (page \pageref{open}) \\ \hline
 
-Made data publicly available?	& & & & \ref{open} (page \pageref{open}) \\ \hline
+%Made data publicly available?	& & & & \ref{open} (page \pageref{open}) \\ \hline
 
-Made data analyses publicly available? & & & & \ref{open} (page \pageref{open}) \\ \hline
+%Made data analyses publicly available? & & & & \ref{open} (page \pageref{open}) \\ \hline
+
+Made stimuli and materials publicly available?& & & & \multirow{3}{*}{\ref{open} (page \pageref{open})}\\ \cline{1-4}
+
+Made data publicly available?	& & & & \\  \cline{1-4}
+
+Made data analyses publicly available? & & & &  \\  \hline
+
 
 Submitted a preprint?& & & & \ref{preprint} (page \pageref{preprint}) \\ \hline
 
@@ -85,7 +93,7 @@ Included confidence intervals (preferably Bayesian)? & & & & \ref{CI} (page \pag
 
 \end{tabular}
 
-{\scriptsize * D = don't know how, H = too hard, E = ethical constraints make it impossible, S = scary, B = bad for science, O = other (specify)}
+{\scriptsize * D = don't know how, H = too hard, S = scary, E = ethical constraints make it impossible, B = bad for science, O = other (specify)}
 
 \end{table}
 
@@ -101,91 +109,102 @@ Included confidence intervals (preferably Bayesian)? & & & & \ref{CI} (page \pag
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Making stimuli/materials, data, and analyses publicly available} \label{open}
 
-There are many reasons to think that making our data and materials publicly available are a good thing for science, some of which I summarize in \href{http://jonathanpeelle.net/blog/2016/2/29/reviewing-in-support-of-open-science}{my blog post on open science}:
+There are many reasons to think that making our data and materials publicly available is a good thing, some of which I summarize in \href{http://jonathanpeelle.net/blog/2016/2/29/reviewing-in-support-of-open-science}{my blog post on open science}:
 
 \begin{quote}
-My own take is that sharing materials and data promotes more accurate science because (a) it facilitates checking of one's data and analysis by others, and (perhaps equally importantly) (b) our internal checks on data organization and accuracy are typically better if we know the materials will be publicly available. So, even if no one ever looks at them, the mere fact that we are sharing them will improve the accuracy of our research. I know this is certainly true in my own work. It may slow down the process, but I think this simply reflects a speed/accuracy tradeoff shifting towards more accuracy. In the long run this seems like only a good thing for scientific discovery.
+[S]haring materials and data promotes more accurate science because (a) it facilitates checking of one's data and analysis by others, and (perhaps equally importantly) (b) our internal checks on data organization and accuracy are typically better if we know the materials will be publicly available. So, even if no one ever looks at them, the mere fact that we are sharing them will improve the accuracy of our research. I know this is certainly true in my own work. It may slow down the process, but I think this simply reflects a speed/accuracy tradeoff shifting towards more accuracy. In the long run this seems like only a good thing for scientific discovery.
 \end{quote}
 
-Making materials publicly available can also save time down the road---most of us agree to make data available ``upon request'', but this can take many frustrating hours if the files have been moved or if the person responsible for a research project has moved on. Although organizing and making available materials and data at the outset takes time now, it can save a lot of time later.
+Making materials publicly available can also save time down the road: most of us agree to make data available ``upon request'', but this can take many frustrating hours if the files have been moved or if the person responsible for a research project has moved on. Although organizing materials and data takes time now, it can save \textit{a lot} of time later.
+
+When sharing data, it's probably best to share it on a third party hosted site, rather than a personal or institutional website (unless your institution has a server set up specifically for data sharing). In many cases data posted online ceases to be accessible due to websites disappearing, links changing, and so on. Most third party hosting sites are a safer bet for the long-term availability of your materials.
 
 Many datasets can easily be shared using websites such as \href{https://github.com}{GitHub}, \href{https://figshare.com}{figshare}, or the \href{http://osf.io}{Open Science Framework}. For neuroimaging data, \url{openfmri.org} is an excellent choice for raw data. At the very least, unthresholded statistical maps can be uploaded to \url{neurovault.org} (Gorgolewski et al., 2015), which allows browsing and for other researchers to download maps for meta analyses.
 
 See also:
 
 \begin{itemize}
-\item Gorgolewski KJ et al. (2015) NeuroVault.org: a web-based repository for collecting and sharing unthresholded statistical maps of the human brain. \journal{Frontiers in Neuroinformatics} 9:8.\newline \doi{10.3389/fninf.2015.00008}
-\item Morey R et al. (2016) The Peer Reviewers' openness Initiative: Incentivizing open research practices through peer review. \journal{Royal Society Open Science} 3:150547. \doi{10.1098/rsos.150547}
+\item Gorgolewski KJ et al.\ (2015) NeuroVault.org: a web-based repository for collecting and sharing unthresholded statistical maps of the human brain. \journal{Frontiers in Neuroinformatics} 9:8.\newline \doi{10.3389/fninf.2015.00008}
+\item Morey R et al.\ (2016) The Peer Reviewers' openness Initiative: Incentivizing open research practices through peer review. \journal{Royal Society Open Science} 3:150547. \doi{10.1098/rsos.150547}
 \item Rouder JN (In press) The what, why, and how of born-open data. \journal{Behavior Research Methods}. \doi{10.3758/s13428-015-0630-z}
-\item Vines, TH et al. (2014) The availability of research data declines rapidly with article age. \journal{Current Biology}, 24, 94--97. \doi{10.1016/j.cub.2013.11.014}
+\item Vines, TH et al.\ (2014) The availability of research data declines rapidly with article age. \journal{Current Biology}, 24, 94--97. \doi{10.1016/j.cub.2013.11.014}
 \end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Open-sourcing figures} \label{CCFigure}
 
-Most traditional journals will copyright the content of an article, including its figures, meaning that permission must be requested from the journal for any future use. In some (many?) cases this will be granted for free for academic purposes, but not always (a recent figure I reproduced from a \journal{JAMA} article cost \$250). Even if a paper isn't published in an open access journal, as the author you can license your figures before submitting to the journal. For example, if you use the popular \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution-By} license, the work is already licensed and so the journal does not own the copyright to the figure. Other authors (including you) are then free to easily re-use your figures, provided they provide attribution, which is generally what we want in science. For an example, see \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2722435}.
+Most traditional journals will copyright the content of an article, including its figures, meaning that permission must be requested from the journal for any future use. In some (many?) cases this will be granted for free for academic purposes, but not always (a recent figure I reproduced from a \journal{JAMA} article cost \$250). Even if a paper isn't published in an open access journal, as the author you can license your figures before submitting to the journal. For example, if you use the popular \href{http://creativecommons.org/licenses/by/4.0/}{Creative Commons Attribution-By} license, the work is already licensed and so the journal does not own the copyright to the figure. Other authors (including you) are then free to easily re-use your figures (for example, in review papers), provided they provide attribution, which is generally what we want in science. For an example, see \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2722435}.
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Submitting preprints} \label{preprint}
 
-Preprints generally refer to author-formatted manuscripts submitted to websites without pre-publication peer-review, which can be accessed by anyone. Preprint servers include \href{http://arxiv.org}{arXiv} and \href{http://biorxiv.org}{bioRxiv}, and \href{http://peerj.com}{PeerJ}.
+Preprints generally refer to author-formatted manuscripts submitted to websites without pre-publication peer-review, which can be accessed by anyone. Popular preprint servers include \href{http://arxiv.org}{arXiv} and \href{http://biorxiv.org}{bioRxiv}, and \href{http://peerj.com}{PeerJ}.
 
-[As a side note, it's been suggested that the term ``preprint'' is a misnomer in the digital age---other suggestions (some more serious than others) include dispatch, sciencegram, or (maybe someday) ``paper''. But we're all talking about the same thing.]
+The argument for preprints can be summarized like this. Traditional scientific publishing takes too long, and thus delays the publicizing of research (which slows down science, and unfairly prevents authors from staking a claim to their ideas---important in competitive fields). In addition, research is frequently published in journals that charge for access, restricting who can benefit from the science. Finally, publishing a preprint may allow authors to get faster feedback on their work, resulting in a higher quality final product.
 
-The argument for preprints might be summarized like this. Traditional scientific publishing takes too long, and thus delays the publicizing of research (which slows down science, and unfairly prevents authors from staking a claim to their ideas---important in competitive fields). In addition, research is frequently published in journals that charge for access, restricting who can benefit from the science. Finally, publishing a preprint may allow authors to get faster feedback on their work, resulting in a higher quality final product.
+Some have argued against preprints. Like many things that go against traditional models preprints may be riskier for early stage scientists and trainees, particularly those not coming out of ``superstar'' labs. Preprints may not be appropriate for every manuscript, but should at least be considered. And, if comments are public, then feedback can also be public, which may be intimidating.
 
-Some have argued against preprints. Like many things that go against traditional models they may be riskier for early stage scientists and trainees, particularly those not coming out of ``superstar'' labs. Preprints may not be appropriate for every manuscript, but should at least be considered. (In our lab, there is frequently no compelling reason to avoid submitting a preprint, apart from the extra work involved.)
+In our lab, there is frequently no compelling reason to avoid submitting a preprint, apart from the extra work involved and the fact that it is scary.
 
-%See also;
-%
-%\begin{itemize}
-%\item blah
-%\end{itemize}
+See also:
+
+\begin{itemize}
+\item Niko Kriegeskorte's ``The selfish scientist's guide to preprint posting'' \url{http://nikokriegeskorte.org/2016/03/13/the-selfish-scientists-guide-to-preprint-posting/}
+\end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Publishing in open access journals} \label{openaccess}
 
-There are different flavors of open access, but the basic idea is that once a paper is published, anyone can access and read it. Open access contrasts with traditional access, in which once a paper is published only readers who have paid for access to the journal or have institutional access can read it.
+There are different flavors of open access, but the basic idea is that once a paper is published, anyone can access and read it. Open access contrasts with traditional publishing models, in which once a paper is published only readers who have paid for access to the journal or have institutional access can read it. (Some traditional journals will make content freely available after an embargo period.)
 
-Some people argue that in practice open access is not important, because the people reading research papers are almost certain to have institutional access. There are several reasons I disagree with this sentiment:
+Some people argue that in practice open access is not important, because the people reading research papers are almost certain to be scientists at research universities who have institutional access. There are several reasons I disagree with this sentiment:
 
 \begin{enumerate}
-\item As a scientist at a research university, I frequently find journals to which my university does not subscribe. I ask friends at other universities, or on twitter, for PDFs.
 
-\item As a scientist at a research university, I frequently find myself working on manuscripts while not connected to my campus network (I do not pay extra fees for off-campus access that my university requires).
+\item Many researchers are at institutions who may \textit{not} have institutional access, due to the fees involved. For example, Erin McKiernan \href{https://twitter.com/emckiernan13/status/706204056323100672}{tweeted}: ``For those arguing there's no access problem, please come work here in Mexico for a month. Then tell me what you think about \#openaccess.''
+
+\item As a scientist at a research university in the United States, I frequently find journals to which my university does not subscribe. I ask friends at other universities, or on twitter, for PDFs. (I'm not the only one---see the twitter tag \href{https://twitter.com/search?q=\%23icanhazpdf}{\#icanhazpdf} for examples.)
+
+\item As a scientist at a research university in the United States, I frequently find myself working on manuscripts while not connected to my campus network (I do not pay extra fees for off-campus access that my university requires). Thus, I'm frequently without access to journals to which my institution has a subscription.
 \end{enumerate}
 
-Of course, for specific papers I am very interested in, I will find a way to track down the paper. But many times, I'm exploring a new topic, or looking for a reference for a particular point. If there are two papers that seem appropriate, and I can access one but not the other, guess which one I'll end up reading and citing? So, as an author, I'd prefer to have my papers get cited more, and thus be more available.
+Of course, for specific papers I am very interested in, I will find a way to track down the paper. But many times, I'm exploring a new topic, or looking for a reference for a particular point. If there are two papers that seem appropriate, and I can access one but not the other, guess which one I'll end up reading and citing? As an author, I'd prefer to have my papers get cited more, and thus I try to make my own papers as easy to access as possible.
 
 People apart from researchers with institutional affiliations do, in fact, read research articles, and in many cases have helped to fund the study through tax dollars. Having paid for the research, as it were, it is only fair they are able to access it. (For some of the work in my lab, this may not happen often, but for clinical and medical research this point takes on whole new importance.)
 
-One challenge to open access is the publication fee, which is frequently higher than for a traditional journal. A second challenge is that some open access journals are perceived to be of lower quality than their traditional counterparts. So, the theoretical and practical advantages of an open access publication sometimes must be tempered by these concerns.
+One challenge to open access is the publication fee, which is sometimes higher than for a traditional journal (which makes money through subscription fees). A second challenge is that some open access journals are sometimes perceived to be of lower quality than their traditional counterparts. So, the theoretical and practical advantages of an open access publication must sometimes be tempered by these concerns.
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Preregistration} \label{prereg}
 
-In many research studies and clinical trials, the researchers have hypotheses ahead of time regarding aspects such as the likely (or interesting) outcome, how many participants are needed to achieve a meaningful result, and so on. Unfortunately, because manuscripts are often written after the data collection has completed, it can be tempting to alter these predictions post-hoc. ``Had we been thinking clearly, we certainly {\itshape could} have predicted such-and-such an outcome''---which can make for a better ``story'', or even change the statistical significance (predicted tests are sometimes not as rigorously controlled for). Preregistration involves documenting {\itshape a priori} aspects of the design and predictions in order to make transparent things that were truly planned or predicted before data collection (or manuscript writing), and those that were not.
+In many research studies and clinical trials, researchers have hypotheses ahead of time regarding aspects such as the likely (or interesting) outcome, how many participants are needed to achieve a meaningful result for this outcome, and so on. Unfortunately, because manuscripts are often written after the data collection has completed, it can be tempting to alter these predictions post-hoc. ``Had we been thinking clearly, we certainly {\itshape could} have predicted such-and-such an outcome''---which can make for a better ``story'', or even change the statistical significance (predicted tests are sometimes not as rigorously controlled for). Preregistration involves documenting {\itshape a priori} aspects of the design and predictions in order to make transparent things that were truly planned or predicted before data collection (or manuscript writing), and those that were not.
 
 (Of course, as researchers we are entitled to perform analyses that were not originally planned, it just forces us to acknowledge that these analyses were not originally planned.)
 
 Preregistration is intended to help avoid a number of specific problems that can creep in to research studies, including:
 
 \begin{enumerate}
-\item Failure to report null results
+\item Failure to report null results.
 \item Arbitrary stopping of data collection (see \S \ref{stoppingRule}), which can make it easier to achieve a significant p value.
-\item Changing of outcome measures (which may result in a significant result, when one was not found using the originally specified outcome measure)
+\item Changing of outcome measures (which may result in a significant result, when one was not found using the originally specified outcome measure).
 \end{enumerate}
 
-``Registered reports'' is a term used by some journals (including \journal{Cortex}, \journal{eLife}, and \journal{Royal Society Open Science}) to describe research studies whose design has been submitted to the journal ahead of time. In some cases, the manuscript can be accepted in principle based on the motivation and design, regardless of the outcome. Doing so is intended to lower the bar to publishing null (or confusing) results: if the design is solid and adequately powered, the findings should be published, and are equally informative regardless of whether they support the original hypothesis.
+Nothing fancy is needed to preregister a study: simply a place to make available the analysis plan, and document when the plan was generated. It is more credible if the preregistration is hosted by a third party to make the dates and edits transparent. The website \url{http://aspredicted.org} makes the process particularly painless.
+
+``Registered reports'' is a term used by some journals (including \journal{Cortex}, \journal{eLife}, and \journal{Royal Society Open Science}) to describe research studies whose design has been submitted to the journal ahead of time. In some cases, the manuscript can be accepted in principle based on the motivation and design, regardless of the outcome. Doing so is intended to lower the bar to publishing null (or confusing) results: if the design is solid and adequately powered, the findings should be published, and are equally informative regardless of whether they support the original hypothesis. Publishing results regardless of the significance of the outcome particularly helps with meta-analyses, which try to judge the overall effect across multiple studies (and whose accuracy depends on the availability of both positive and negative outcomes).
+
+(If one isn't ready to officially preregister a study, a potential baby step in that direction is to create an internal document with an analysis plan to see how that goes---although this isn't really preregistration, it is still a useful step in constraining and explaining our analyses.)
 
 See also:
 
 \begin{itemize}
-\item Chambers CD (2013) Registered Reports: A new publishing initiative at {\itshape Cortex}. \journal{Cortex} 49:609--610.
+\item Chambers CD (2013) Registered Reports: A new publishing initiative at {\itshape Cortex}. \journal{Cortex} 49:609--610. \doi{10.1016/j.cortex.2012.12.016}
+
+\item Nosek BA, Lakens D (2014) Registered reports: A method to increase the credibility of published results. \journal{Social Psychology} 45:137-141. \doi{10.1027/1864-9335/a000192}
 
 \item Scott S. Pre-registration would put science in chains. \url{http://www.timeshighereducation.co.uk/comment/opinion/pre-registration-would-put-science-in-chains/2005954.article}
 
@@ -195,17 +214,17 @@ See also:
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Deciding on when to stop data collection ahead of time} \label{stoppingRule}
 
-One aspect about data that can seem surprising at first is that statistical results can jump around as more data are collected, particularly with small sample sizes. That is, the effect size---or the p value of a particular effect---can go from small to large, or significant to not significant, as more data enter in to the analysis. So, one one hand, having more data ``always'' leads to a more accurate estimate of an effect. But, if a researcher bases their data collection on the current result, bias can occur.
+One aspect about data that can seem surprising at first is that statistical results jump around as more data are collected, particularly with small sample sizes (see Simmons et al., 2011, Figure 2). That is, the effect size---or the p value of a particular effect---can go from small to large, or significant to not significant, as more data enter in to the analysis. So, one one hand, having more data ``always'' leads to a more accurate estimate of an effect. But, if a researcher bases their data collection practices on the current result, bias can occur.
 
-Consider a not uncommon situation in which a student collects behavioral data from 20 participants and would like to know whether he needs to run more participants. If the effect of interest is p < .05, then 20 participants seems like a nice round number and he may decide to stop. If the effect comes out at p = 0.9, this seems like a clear answer, too. But if the effect is p = .08, he may decide to run 10 more people to ``see if the effect is real''. The problem is that, if one continues to collect data until a significance value is achieved, it is more likely to happen (and thus the p value is invalid).
+Consider a not uncommon situation in which a student collects behavioral data from 20 participants and would like to know whether he needs to run more participants. If the effect of interest is p < .05, then 20 participants seems like a nice round number and he may decide to stop. If the effect comes out at p = 0.9, this seems like a clear answer, too, and he may also stop (quite possibly putting the experiment in the proverbial file drawer). But if the effect is p = .08, he may decide to run 10 more people to ``see if the effect is real''. The problem is that, if one continues to collect data until a significance value is achieved, it is more likely to happen (and thus the p value is invalid). (If 30 participants don't work, how about 31? 32? 37?)
 
-There are ways to include sequential analyses that are preplanned (Lakens, 2014), and Bayesian statistics may be less affected (Rouder, 2014, Sch\"onbrodt \& Wagenmakers). These situations aside, it's safer to specify a stopping rule ahead of time.
+There are ways to conduct sequential analyses that are preplanned (Lakens, 2014), and Bayesian statistics may be less affected (Rouder, 2014, Sch\"onbrodt \& Wagenmakers). These situations aside, it's safer to specify a stopping rule ahead of time.
 
 See also:
 
 \begin{itemize}
 \item Lakens D (2014) Performing high-powered studies efficiently with sequential analyses. \journal{European Journal of Social Psychology} 44:701--710. \doi{10.1002/ejsp.2023}
-\item Rouder JN (2014) Optional stopping: No problem for Bayesians. \journal{Psychonomic Bulletin and Review} 21:301--308.
+\item Rouder JN (2014) Optional stopping: No problem for Bayesians. \journal{Psychonomic Bulletin and Review} 21:301--308. \doi{10.3758/s13423-014-0595-4}
 \item Sch\"{o}nbrodt FD, Wagenmakers E-J. Bayes factor design analysis: Planning for compelling evidence. \url{http://papers.ssrn.com/sol3/papers.cfm?abstract_id=2722435}
 \end{itemize}
 
@@ -214,7 +233,13 @@ See also:
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Explaining all conditions, tests, and data exclusions} \label{explainAllTests}
 
-In a null hypothesis significance testing (NHST) framework, the more tests conducted, the better the chance of finding a significant effect even when one doesn't exist. Thus, it's important to be clear about how many tests were conducted, whether any data were excluded, and so on. (As researchers this should also mean that we are clear in our own minds when we are indeed testing a hypothesis vs.\ conducting exploratory research.)
+In a null hypothesis significance testing (NHST) framework, the more tests conducted, the better the chance of finding a significant effect even when one doesn't exist. For example, with a typical cutoff of p $<$ .05, if I conduct 20 tests, I am likely to find one ``significant'' difference by chance (when no true difference exists). Thus, it's important to be clear about how many tests were conducted, whether any data were excluded, and so on. (As researchers this should also mean that we are clear in our own minds when we are indeed testing a hypothesis vs.\ conducting exploratory research.)
+
+Simmons et al.\ (2011) demonstrated this with example experiments and simulations with a large number of ``experimenter degrees of freedom'' to demonstrate that with enough tests it is possible to find ``significant'' results, and even to write these up in a convincing way. Explanations can be especially convincing when all of the tests aren't described, but only the ones leading a significant result. To avoid these situations, Simmons et al.\ (2012) suggest a ``21 word solution'' that makes it clear to readers whether all tests were (or were not) explained in the text:
+
+\begin{quote}
+We report how we determined our sample size, all data exclusions (if any), all manipulations, and all measures in the study.
+\end{quote}
 
 See also:
 
@@ -226,32 +251,37 @@ See also:
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Collected an informative data set} \label{n}
+\chapter{Collecting an informative data set} \label{n}
 
-As discussed in the section on effect sizes, in many cases we don't just want to know whether a non-zero effect exists, but we'd like to know the magnitude of the effect. For example, if I am studying the effect of hearing loss on speech intelligibility, I'd like to know how much of a change in behavior I might see for a 5 dB change in hearing: it matters whether there is a 25\% drop in accuracy for a 1\% drop in accuracy.
+As discussed in the section on effect sizes, in many cases we don't just want to know whether a non-zero effect exists; we'd like to know \textit{how large} the effect is. For example, if I am studying the effect of hearing loss on speech intelligibility, I'd like to know \textit{how much} of a change in behavior I might see for a 5 dB change in hearing: it matters whether there is a 25\% drop in accuracy or a 1\% drop in accuracy.
 
-Unfortunately, many power analyses (and more prevalent rules of thumb) are structured around finding a significant result, and not accurately estimating parameters. The number of participants needed to accurately estimate parameters in a behavioral study, of course, varies, but estimates are typically in the range of hundreds of participants, rather than tens of participants.
+Unfortunately, many power analyses (and more prevalent rules of thumb) are structured around finding a significant result, and not accurately estimating parameters. The number of participants needed to accurately estimate parameters in a behavioral study, of course, varies, but estimates are typically in the range of hundreds of participants, rather than tens of participants. So---based on my experience and reading---generating an informative, accurate, and hopefully reproducible dataset typically requires many more participants than is typical for the field.
 
 See also:
 
 \begin{itemize}
-\item Button KS, Ioannidis JPA, Mokrysz C, Nosek BA, Flint J, Robinson ESJ, Munaf˜ MR (2013) Power failure: why small sample size undermines the reliability of neuroscience. Nat Rev Neurosci 14:365-376.
+\item Button KS, Ioannidis JPA, Mokrysz C, Nosek BA, Flint J, Robinson ESJ, Munaf˜ MR (2013) Power failure: why small sample size undermines the reliability of neuroscience. \journal{Nature Reviews Neuroscience} 14:365-376. \doi{10.1038/nrn3475}
 
-\item Kelley K, Maxwell SE (2003) Sample size for multiple regression: Obtaining regression coefficients that are accurate, not simply significant. Psychol Methods 8:305-321.
+\item Ioannidis JPA (2005) Why most published research findings are false. \journal{PLoS Medicine} 2:e124. \doi{10.1371/journal.pmed.0020124}
 
-\item Maxwell SE (2000) Sample size and multiple regression analysis. Psychol Methods 5:434-458.
+\item Kelley K, Maxwell SE (2003) Sample size for multiple regression: Obtaining regression coefficients that are accurate, not simply significant. \journal{Psychological Methods} 8:305-321. \doi{10.1037/1082-989X.8.3.305}
 
-\item Sch\"{o}nbrodt F, Perugini M (2013) At what sample size do correlations stabilize? J Res Pers 47:609-612.
+\item Lakens D, Evers ERK (2014) Sailing from the seas of chaos into the corridor of stability: Practical recommendations to increase the informational value of studies. \journal{Perspectives on Psychological Science} 9:278-292. \doi{10.1177/1745691614528520}
+
+\item Maxwell SE (2000) Sample size and multiple regression analysis. \journal{Psychological Methods} 5:434-458. \doi{10.1037/1082-989X.5.4.434}
+
+\item Sch\"{o}nbrodt F, Perugini M (2013) At what sample size do correlations stabilize? \journal{Journal of Research in Personality} 47:609-612. \doi{10.1016/j.jrp.2013.05.009}
+
 \end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Plotting data informatively} \label{plotting}
 
-Bar graphs have been the standard in many years for showing means and/or effect sizes, but do a poor job of showing the distribution of the data: data with a myriad of underlying distributions can give rise to identical means (and standard deviations). With modern graphing software (e.g., R or Matlab) it's trivial to produce more informative plots, showing either every data point, or at least a fuller picture of the distribution (for example, in a violin plot). Showing all the data gives readers a fuller set of the truth of the dataset (including the validity of any underlying assumptions that play in to the statistical analyses).
+Bar graphs have been the standard in many years for showing means and effect sizes, but do a poor job of showing the distribution of the data: data with a myriad of underlying distributions can give rise to identical means (and standard deviations). With modern graphing software (e.g., R or Matlab) it's trivial to produce more informative plots, showing either every data point, or at least a fuller picture of the distribution (for example, in a \href{https://en.wikipedia.org/wiki/Violin\_plot}{violin plot}). Showing all the data gives readers a fuller set of the truth of the dataset (including the validity of any underlying assumptions that play in to the statistical analyses).
 
 
-See also;
+See also:
 
 \begin{itemize}
 
@@ -275,26 +305,34 @@ And today, they continue to continue. And we, as teachers, consultants, authors,
 \noindent Difficulties with NHST include:
 
 \begin{itemize}
+\item The true null hypothesis is always false (i.e., means between two conditions will not be identical to an infinite precision)
 \item A dichotomous estimate (``statistical significance'') rather than an interval
 \item Misinterpretation of what p values reflect
-\item Focus on statistical significance rather than effect size
 \end{itemize}
 
 See also:
 
 \begin{itemize}
+\item Geoff Cumming's ``Dance of the p values'' \url{https://www.youtube.com/watch?v=5OL1RqHrZQ8}
 \item Cohen J (1994) The earth is round (p < .05). \journal{American Psychologist} 49:997--1003.\newline \doi{10.1037/0003-066X.49.12.997}
+\item Loftus GR (1996) Psychology will be a much better science when we change the way we analyze data. \journal{Current Directions in Psychological Science} 5:161--171. \url{ http://www.jstor.org/stable/20182423}
 \end{itemize}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Confidence intervals} \label{CI}
+\chapter{Using confidence intervals} \label{CI}
 
+The first point here is that any sort of interval or distribution suggests (quite correctly) that any number our statistical models produce is an \textit{estimate} rather than the ``truth''. You would react very differently if I said ``I will give you \$100'' compared to ``I will give you something between \$0 and \$190, or maybe I will even ask you to \textit{give} me \$10.''
 
+Similarly, in a research study I may find that hearing loss is related to participants' memory for speech, with a standardized beta of 0.3. How much confidence do I have in this number of 0.3? It matters if the likely range is 0.28--0.32, or if it might be 0.0--0.6.
 
-So, confidence intervals, as generally understood, seem more in line with what we as researchers want to know.
+So, thinking about distributions rather than point estimates is probably closer to what we actually care about.
 
-That being said, Morey et al.\ (2016) argue that most of us have an incorrect understanding of confidence intervals, which can have nonintuitive and/or unexpected properties. They suggest using Bayesian versions (credible intervals) instead.
+Given that we care about distributions, there are many ways to report uncertainty around an estimate. The standard error (commonly used for error bars) gives an indication of the standard deviation of the population mean ( i.e., a distribution of sample means). But a point estimate, plus and minus 1 standard error, is only 68\% likely to contain the true mean.
+
+Confidence intervals, on the other hand, should contain the population mean with a given accuracy (that is, the population mean should be within the 95\% confidence interval 95\% of the time). Thus, confidence intervals (CIs) are better suited for inference (that is, for drawing conclusions based on data). Reporting CIs instead of point estimates, and using CIs instead of standard errors, is a step in the right direction.
+
+That being said, Morey et al.\ (2016) argue that most of us have an incorrect understanding of confidence intervals, which can have nonintuitive and/or unexpected properties. They suggest using Bayesian versions (credible intervals) instead. At the very least, informed by their simulations, it is worth checking assumptions about whether a confidence interval functions as we expect it to.
 
 See also:
 
