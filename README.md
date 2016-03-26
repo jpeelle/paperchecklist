@@ -12,3 +12,7 @@ The first page is designed to be a succinct checklist, but that a few thoughts (
 The checklist will no doubt evolve over time and is tailored to our lab's specific needs. You are welcome to use the checklist as-is, or to adapt it in whatever way might be useful for your own publishing.
 
 It's worth noting that some (many?) of these guidelines are controversial. My view is that it's better to have a discussion about these important issues, regardless of what you, as authors, decide is right for a particular publication. Better for PIs because we should be aware of the pros and cons of publishing issues, and better for trainees because they can be exposed to these.
+
+For more on this, see:
+
+Peelle JE (2016) A manuscript checklist for improving science. The Winnower 3:e145877.77781. [doi:10.15200/winn.145877.77781](http://dx.doi.org/10.15200/winn.145877.77781)
